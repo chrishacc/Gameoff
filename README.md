@@ -1,6 +1,8 @@
 # Game-Jam
 
 ## Ascension 
+![63BCDF3794051809F916C042E5980B1B](https://github.com/chrishacc/Gameoff/assets/137788210/220f19b1-fb0b-4a49-8729-e5601a5a4b83)
+
 ### Game Description
 A story about the protagonist who has mastered the way to become a god - using the power of the faith of his followers to cultivate powerful spells and eventually become a god.  
 The game type is Simulation + Card, you need to construct a powerful deck to deal with the test of the already existing god. You can send out your congregants and strengthen them with spells, sacrifice your congregants for great power, or keep it simple and brutal - use your powerful spells to directly destroy the enemy's will. Whichever school you prefer, you can build your deck as you like in our game.  
