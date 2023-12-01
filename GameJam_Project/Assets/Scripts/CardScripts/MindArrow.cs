@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class MindArrow : MonoBehaviour
 {
+    private CardGenerate getCardScript; // 用于保存 GetCard 脚本的引用
 
     public int id;
     public bool active;//0:unavailable.
@@ -17,7 +18,7 @@ public class MindArrow : MonoBehaviour
 
     void Start()
     {
-       
+        CardGenerate getCardScript = GameObject.FindObjectOfType<CardGenerate>();
     }
 
     private void OnMouseUp()
@@ -35,17 +36,17 @@ public class MindArrow : MonoBehaviour
             GameObject.Find("BattleController").GetComponent<BattleController>().Direct_Dmg(5,1);
             GameObject.Find("BattleController").GetComponent<BattleController>().mata -= cost;
 
-            CardGenerate getCardScript = GameObject.FindObjectOfType<CardGenerate>();
+            
             // 检查GetCard脚本是否存在
-            //if (getCardScript != null)
-            //{
-            //    // 获取卡牌在手牌中的索引
-            //    int cardIndex = getCardScript.GetCardIndex(gameObject);
+            if (getCardScript != null)
+            {
+                // 获取卡牌在手牌中的索引
+                int cardIndex = getCardScript.GetCardIndex(gameObject);
 
-            //    // 调用GetCard脚本中的UseCard方法
-            //    getCardScript.UseCard(cardIndex);
-            //}
-            GameObject.Find("CardGenerate").GetComponent<CardGenerate>().UseCard(id);
+                // 调用GetCard脚本中的UseCard方法
+                getCardScript.UseCard(cardIndex);
+            }
+            //GameObject.Find("CardGenerate").GetComponent<CardGenerate>().UseCard(id);
             //Destroy(this.gameObject);
         }
         else

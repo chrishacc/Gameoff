@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Frost : MonoBehaviour
@@ -61,5 +60,10 @@ public class Frost : MonoBehaviour
     public void Victory()
     {
 
+    }
+
+    public float GetHP()
+    {
+        return HP;
     }
 }

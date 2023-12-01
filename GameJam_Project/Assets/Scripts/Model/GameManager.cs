@@ -29,8 +29,8 @@ public class GameManager:MonoBehaviour
     public GameManager()
     {
         // ³õÊ¼»¯ÓÎÏ·×´Ì¬
-        turn = 0;
-        faith = 0;
+        turn = 1;
+        faith = 8;
         power = 0;
         numPeople = 3;
         maxPeople = 20;

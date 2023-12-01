@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class Create : MonoBehaviour
 {
+    private CardGenerate getCardScript; // 用于保存 GetCard 脚本的引用
+
     public int id;
     public bool active;//0:unavailable.
     public int cost;
@@ -17,8 +19,8 @@ public class Create : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
- 
-        
+        CardGenerate getCardScript = GameObject.FindObjectOfType<CardGenerate>();
+
     }
 
     private void OnMouseUp()
@@ -41,7 +43,16 @@ public class Create : MonoBehaviour
                 GameObject.Find("GameData").GetComponent<GameData>().numPeople+=1;
                 GameObject.Find("BattleController").GetComponent<BattleController>().mata -= cost;
 
-                GameObject.Find("CardGenerate").GetComponent<CardGenerate>().UseCard(id);
+                
+                // 检查GetCard脚本是否存在
+                if (getCardScript != null)
+                {
+                    // 获取卡牌在手牌中的索引
+                    int cardIndex = getCardScript.GetCardIndex(gameObject);
+
+                    // 调用GetCard脚本中的UseCard方法
+                    getCardScript.UseCard(cardIndex);
+                }
             }
             else
             {

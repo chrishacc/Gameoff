@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class Inspiration : MonoBehaviour
 {
+    private CardGenerate getCardScript; // 用于保存 GetCard 脚本的引用
+
     public int id;
     public bool active;//0:unavailable.
     public int cost;
@@ -15,7 +17,7 @@ public class Inspiration : MonoBehaviour
     
     void Start()
     {
- 
+        CardGenerate getCardScript = GameObject.FindObjectOfType<CardGenerate>();
     }
     // Start is called before the first frame update
 
@@ -32,7 +34,16 @@ public class Inspiration : MonoBehaviour
             GameObject.Find("BattleController").GetComponent<BattleController>().next_magic_dmg = 5;
             GameObject.Find("BattleController").GetComponent<BattleController>().mata -= cost;
 
-            GameObject.Find("CardGenerate").GetComponent<CardGenerate>().UseCard(id);
+            
+            // 检查GetCard脚本是否存在
+            if (getCardScript != null)
+            {
+                // 获取卡牌在手牌中的索引
+                int cardIndex = getCardScript.GetCardIndex(gameObject);
+
+                // 调用GetCard脚本中的UseCard方法
+                getCardScript.UseCard(cardIndex);
+            }
         }
         else
         {

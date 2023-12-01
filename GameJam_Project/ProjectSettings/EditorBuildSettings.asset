@@ -14,13 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleScene01.unity
     guid: 744e5ab2c326c2649b293c3970e1aa43
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BattleScene02.unity
     guid: 873ee7393def0034994801d9debc5ed8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BattleScene03.unity
     guid: 8b159e56f0d2c8049a348b1d03632f2c
   - enabled: 1
     path: Assets/Scenes/CardSelectionScene.unity
     guid: 3acee782e2c2fc54fbcfb76cc122bd53
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: 7b263cda7bb0998448505bd04390e1e1
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: ad7af763114ce2949958466cf4195971
   m_configObjects: {}

@@ -165,6 +165,8 @@ public class BattleController : MonoBehaviour
 
         if (PlayerHP <= 0) Lose();
 
+        Victory();
+
         per_mata = 0.5 + memnum * 0.075;
 
     }
@@ -293,17 +295,14 @@ public class BattleController : MonoBehaviour
     void Lose()
     {
         //This function should include a Window about Player's Lose.
-        if(PlayerHP <= 0)
-        {
-            //SceneManager.LoadScene("Lose");
-        }
+        SceneManager.LoadScene("Lose");
     }
     void Victory()
     {
         //This function need to skip to the Operation Window.
         if(Boss.GetComponent<Frost>().HP <= 0)
         {
-            //SceneManager.LoadScene("Victory");
+            SceneManager.LoadScene("Victory");
         }
     }
 
@@ -315,5 +314,10 @@ public class BattleController : MonoBehaviour
     public double GetPerMata()
     {
         return per_mata;
+    }
+
+    public int GetPlayerHP()
+    {
+        return PlayerHP;
     }
 }
